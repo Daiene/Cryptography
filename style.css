@@ -1,0 +1,246 @@
+:root {
+  --main-dark-mode-background: #312F31;
+  --main-dark-mode-border: #504F51;
+  --text-color-dark-mode: #E3E2E3;
+  --encrypt-button-dark-mode: #E8FE49;
+  --encrypt-button-dark-mode-hover: rgb(253, 215, 0);
+  --decrypt-button-dark-mode: #49FEE8;
+  --decrypt-button-dark-mode-hover: #009ece;
+  --text-encrypt-button-dark-mode: #3C2D19;
+}
+
+@font-face {
+  font-family: 'Jeju Myeongjo';
+  src: url('./font/JejuMyeongjo-Regular.ttf');
+  font-style: normal;
+  font-weight: normal;
+}
+
+body {
+  background-image: url("./img/background.avif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--text-color-dark-mode);
+  padding: 1% 8%;
+  font-family: 'Jeju Myeongjo', serif;
+  font-weight: 200;
+  font-style: normal;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header, #title-and-magnifying-glass {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+#clean, #dark-light-mode, #encrypt, #decrypt, #action-buttons {
+  display: flex;
+  align-items: center;
+  color: var(--text-color-dark-mode);
+  cursor: pointer;
+}
+
+#clean, #encrypt, #decrypt {
+  background-color: transparent;
+  gap: 0.5rem;
+  border: none;
+  border-bottom: 2px solid var(--main-dark-mode-border);
+}
+
+#clean:hover img {
+  transform: rotate(30deg);
+}
+
+#clean:hover p {
+  transform: scale(1.05);
+}
+
+#dark-light-mode {
+  gap: 2rem;
+}
+
+.mode-icon {
+  padding: 10px;
+  border-radius: 50px;
+  border: 2px solid transparent;
+}
+
+.mode-icon:hover {
+  border: 2px solid var(--main-dark-mode-border);
+}
+
+.active {
+  border: 2px solid var(--main-dark-mode-border);
+}
+
+h1 {
+  font-size: 5em;
+  margin: 0;
+  font-weight: normal;
+  position: relative;
+  display: inline-block;
+}
+
+h1 span {
+  display: inline-block;
+  animation: zoom 0.5s forwards;
+  transform-origin: 50% 50%;
+  margin-right: -12px;
+}
+
+#magnifying-glass {
+  position: absolute;
+  right: 0;
+  animation: go-back 6s;
+}
+
+main {
+  background-color: var(--main-dark-mode-background);
+  border: 3px solid var(--main-dark-mode-border);
+  border-radius: 50px;
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#information-type-letter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#textarea {
+  height: 350px;
+  resize: none;
+  border-radius: 20px;
+  padding: 1.5%;
+  background-color: rgba(89,88,90,0.6);
+  border: none;
+  color: var(--text-color-dark-mode);
+}
+
+#textarea:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+} 
+
+#action-buttons {
+  gap: 0.5rem;
+}
+
+#encrypt, #decrypt {
+  background-color: var(--encrypt-button-dark-mode);
+  border-radius: 20px;
+  color: var(--text-encrypt-button-dark-mode);
+  font-weight: bold;
+  font-size: 16px;
+  width: 260px;
+  border: none;
+  padding: 0 2%;
+  justify-content: space-between;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#encrypt {
+  background-color: var(--encrypt-button-dark-mode);
+}
+
+#decrypt {
+  background-color: var(--decrypt-button-dark-mode);
+}
+
+#encrypt:hover {
+  background-color: var(--encrypt-button-dark-mode-hover);
+}
+
+#decrypt:hover {
+  background-color: var(--decrypt-button-dark-mode-hover);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+footer p, #information-type-letter p {
+  margin: 0;
+}
+
+@keyframes go-back {
+  from {
+    transform: translateX(-1300px) scale(2.8);
+    margin-top: 16em;
+  }
+  to {
+    transform: translateX(0) scale(1);
+    margin-top: 0;
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(1.4);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+h1 span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+h1 span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+h1 span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+h1 span:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+h1 span:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+h1 span:nth-child(6) {
+  animation-delay: 1s;
+}
+
+h1 span:nth-child(7) {
+  animation-delay: 1.1s;
+}
+
+h1 span:nth-child(8) {
+  animation-delay: 1.2s;
+}
+
+h1 span:nth-child(9) {
+  animation-delay: 1.3s;
+}
+
+h1 span:nth-child(10) {
+  animation-delay: 1.4s;
+}
+
+h1 span:nth-child(11) {
+  animation-delay: 1.5s;
+}
+
+h1 span:nth-child(12) {
+  animation-delay: 1.7s;
+}
